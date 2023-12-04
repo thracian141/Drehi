@@ -48,36 +48,43 @@
 </nav>
 <div class="bottomnav">
     <button on:mouseenter={()=> dropdownEnabled = true} on:mouseleave={()=> dropdownEnabled = false} class="bottom-nav-button">
-        МЪЖКИ
+        ДРЕХИ
         <div class="bottomhider"></div>
     </button>
     <button on:mouseenter={()=> dropdownEnabled = true} on:mouseleave={()=> dropdownEnabled = false} class="bottom-nav-button">
-        ДАМСКИ
+        ДРЕХИ
         <div class="bottomhider"></div>
     </button>
     <button on:mouseenter={()=> dropdownEnabled = true} on:mouseleave={()=> dropdownEnabled = false} class="bottom-nav-button">
-        ДЕТСКИ
+        ДРЕХИ
         <div class="bottomhider"></div>
     </button>
     <button on:mouseenter={()=> dropdownEnabled = true} on:mouseleave={()=> dropdownEnabled = false} class="bottom-nav-button">
-        АКСЕСОАРИ
+        ДРЕХИ
         <div class="bottomhider"></div>
     </button>
     <button on:mouseenter={()=> dropdownEnabled = true} on:mouseleave={()=> dropdownEnabled = false} class="bottom-nav-button">
-        MERCH
+        ДРЕХИ
         <div class="bottomhider"></div>
     </button>
     <button on:mouseenter={()=> dropdownEnabled = true} on:mouseleave={()=> dropdownEnabled = false} class="bottom-nav-button">
-        МАРКИ
+        ДРЕХИ
         <div class="bottomhider"></div>
     </button>
     <button on:mouseenter={()=> dropdownEnabled = true} on:mouseleave={()=> dropdownEnabled = false} class="bottom-nav-button">
-        ДРУГИ
+        ДРЕХИ
+        <div class="bottomhider"></div>
+    </button>
+    <button on:mouseenter={()=> dropdownEnabled = true} on:mouseleave={()=> dropdownEnabled = false} class="bottom-nav-button">
+        ДРЕХИ
         <div class="bottomhider"></div>
     </button>
     {#if dropdownEnabled}
         <div in:slide={{duration: 800}} out:slide={{duration:400}} class="bottomnav-dropdown">
             <!-- Dropdown content goes here -->
+            <div style="background-color:crimson; height: 80%; width:1rem;">
+
+            </div>
         </div>
     {/if}
 </div>
@@ -90,11 +97,10 @@
         top:100%;
         background-color: rgb(43,45,49);
         width: calc(100% - 48rem);
-        height: 40vh;
+        height: 70vh;
         outline: #5663F7 solid 3px;
         border-radius: 0 0 0.3rem 0.3rem;
         padding:3rem;
-        z-index: 500;
     }
     .bottomhider {
         opacity: 0;
@@ -225,13 +231,12 @@
         border-bottom:1px solid #424549dd;
     }
     .topnav > div > a {
-        color:rgb(128,132,142);
         transition: color 0.1s ease-in-out;
         cursor:grab;
         text-decoration: none !important;
     }
     .topnav > div > a:hover {
-        color: white !important;
+        color: white;
     }
     .topnav > div > a:visited {
         color:rgb(128,132,142);
