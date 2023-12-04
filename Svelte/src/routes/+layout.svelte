@@ -26,5 +26,6 @@
         width:100vw;
         background-color: rgb(49,51,56);
         color:white;
+        position: relative;
     }
 </style>

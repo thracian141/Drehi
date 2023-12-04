@@ -1,8 +1,18 @@
+<script lang="ts">
+    let dropdownEnabled = false;
+    function enableDropdown() {
+        dropdownEnabled = true;
+    }
+    function disableDropdown() {
+        dropdownEnabled = false;
+    }
+</script>
+
 <div class="topnav">
     <div style="display: flex; flex-direction:row; gap:2rem;">
         <a>Доставка до Овча Купел</a>
         <a>2-часов срок за връщане</a>
-        <a>Връзка с Бойко Борисов</a>
+        <a href="https://www.facebook.com/boyko.borissov.7/?locale=bg_BG">Връзка с Бойко Борисов</a>
     </div>
     <div style="display:flex; flex-direction:row; align-items:center; gap:0.3rem;">
         <img src="/buttonicons/envelope-at-fill.svg" alt="contact" style="width:1.2rem; height:1.2rem; filter: brightness(0) saturate(100%) invert(99%) sepia(1%) saturate(6197%) hue-rotate(301deg) brightness(110%) contrast(101%);" />
@@ -35,8 +45,106 @@
         </a>
     </div>
 </nav>
+<div class="bottomnav">
+    <button on:mouseenter={()=> dropdownEnabled = true} on:mouseleave={()=> dropdownEnabled = false} class="bottom-nav-button">
+        ДРЕХИ
+        <div class="bottomhider"></div>
+    </button>
+    <button on:mouseenter={()=> dropdownEnabled = true} on:mouseleave={()=> dropdownEnabled = false} class="bottom-nav-button">
+        ДРЕХИ
+        <div class="bottomhider"></div>
+    </button>
+    <button on:mouseenter={()=> dropdownEnabled = true} on:mouseleave={()=> dropdownEnabled = false} class="bottom-nav-button">
+        ДРЕХИ
+        <div class="bottomhider"></div>
+    </button>
+    <button on:mouseenter={()=> dropdownEnabled = true} on:mouseleave={()=> dropdownEnabled = false} class="bottom-nav-button">
+        ДРЕХИ
+        <div class="bottomhider"></div>
+    </button>
+    <button on:mouseenter={()=> dropdownEnabled = true} on:mouseleave={()=> dropdownEnabled = false} class="bottom-nav-button">
+        ДРЕХИ
+        <div class="bottomhider"></div>
+    </button>
+    <button on:mouseenter={()=> dropdownEnabled = true} on:mouseleave={()=> dropdownEnabled = false} class="bottom-nav-button">
+        ДРЕХИ
+        <div class="bottomhider"></div>
+    </button>
+    <button on:mouseenter={()=> dropdownEnabled = true} on:mouseleave={()=> dropdownEnabled = false} class="bottom-nav-button">
+        ДРЕХИ
+        <div class="bottomhider"></div>
+    </button>
+    <button on:mouseenter={()=> dropdownEnabled = true} on:mouseleave={()=> dropdownEnabled = false} class="bottom-nav-button">
+        ДРЕХИ
+        <div class="bottomhider"></div>
+    </button>
+    {#if dropdownEnabled}
+        <div class="bottomnav-dropdown">
+            <!-- Dropdown content goes here -->
+        </div>
+    {/if}
+</div>
+
 
 <style>
+    .bottomnav-dropdown {
+        position: absolute;
+        top:100%;
+        background-color: rgb(43,45,49);
+        width: calc(100% - 48rem);
+        height: 40vh;
+        outline: #5663F7 solid 3px;
+        border-radius: 0 0 0.3rem 0.3rem;
+    }
+    .bottomhider {
+        opacity: 0;
+        display: flex;
+        background-color: rgb(43,45,49);
+        height:7px;
+        width:100%;
+        position: absolute;
+        bottom:-3px;
+        left:0;
+        z-index: 999;
+    }
+    .bottom-nav-button {
+        display: flex;
+        flex-direction: column;
+        height:100%;
+        flex-grow: 1;
+        border-radius: 0.3rem;
+        background-color: rgb(30,31,34);
+        border: none;
+        transition: filter 0.1s ease-in-out;
+        align-items: center;
+        justify-content: center;
+        color: rgb(128,132,142);
+        font-size: 1.6rem;
+        font-weight: bold;
+        position: relative;
+    }
+    .bottom-nav-button:hover {
+        z-index: 888;
+        background-color: rgb(43,45,49);
+        cursor:pointer;
+        outline: #5663F7 solid 3px;
+        
+    }
+    .bottom-nav-button:hover > .bottomhider {
+        opacity:1;
+    }
+    .bottomnav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(30,31,34);
+        height: 6rem;
+        padding: 0 24rem;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px -2px 3px 0.5px;
+        border-bottom:1px solid #424549dd;
+        position: relative;
+    }
     #finder {
         border-radius: 0.5rem;
         background-color: rgb(30,31,34);
@@ -90,10 +198,10 @@
         flex-direction: row;
         align-items: center;
         position: relative;
-        width: 12.3rem;
+        width: 11.5rem;
     }
     #logo {
-        height:6.5rem;
+        height:5.5rem;
         width: auto;
         margin:0;
         position: absolute;
@@ -108,18 +216,27 @@
         color: rgb(128,132,142);
         line-height: 3rem;
         background-color: rgb(30,31,34);
-        height: 3rem;
+        height: 2.6rem;
         padding: 0 2rem;
         align-items: center;
         justify-content: space-between;
-        box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 4px 1px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 4px 1px;
         z-index: 999;
+        border-bottom:1px solid #424549dd;
     }
     .topnav > div > a {
         transition: color 0.1s ease-in-out;
         cursor:grab;
+        text-decoration: none !important;
     }
     .topnav > div > a:hover {
+        color: white;
+    }
+    .topnav > div > a:visited {
+        color:rgb(128,132,142);
+        text-decoration: none !important;
+    }
+    .topnav > div > a:visited:hover {
         color: white;
     }
     nav {
