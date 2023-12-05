@@ -123,11 +123,10 @@
         position: absolute;
         top: 100%;
         background-color: rgb(43, 45, 49);
-        width: calc(100% - 48rem);
+        width:60%;
         height: 40vh;
         outline: #5663f7 solid 3px;
         border-radius: 0 0 0.3rem 0.3rem;
-        padding: 3rem;
         z-index: 500;
     }
     .bottomhider {
@@ -172,8 +171,9 @@
         justify-content: space-between;
         align-items: center;
         background-color: rgb(30, 31, 34);
+        flex-grow: 1;
         height: 6rem;
-        padding: 0 20%;
+        padding-left: 20%; padding-right: 20%;
         box-shadow: rgba(0, 0, 0, 0.2) 0px -2px 3px 0.5px;
         border-bottom: 1px solid #424549dd;
         position: relative;
