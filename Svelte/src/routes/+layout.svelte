@@ -28,5 +28,9 @@
         background-color: rgb(49,51,56);
         color:white;
         position: relative;
+        background-image: url("/bg.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position:top;
     }
 </style>
