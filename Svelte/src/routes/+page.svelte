@@ -15,7 +15,23 @@
             <Carousel />
         </div>
         <div class="centerbottom">
-            <h1 style="writing-mode: vertical-rl; text-orientation: upright; letter-spacing:-10px;">ПРОМО!</h1>
+            <h1 style="writing-mode: vertical-rl; text-orientation: upright; letter-spacing:-10px;">ПРОМО</h1>
+            <!-- svelte-ignore a11y-missing-attribute -->
+            <a class="promo">
+                <h1>-15%</h1>
+                <p>на всички терлици</p>
+            </a>
+            <!-- svelte-ignore a11y-missing-attribute -->
+            <a class="promo">
+                <h1>-20%</h1>
+                <p>на Vasil Versace</p>
+            </a>
+            <!-- svelte-ignore a11y-missing-attribute -->
+            <a class="promo">
+                <h1>-30%</h1>
+                <p>комплект 3 броя обувки</p>
+            </a>
+            <h1 style="writing-mode: vertical-rl; text-orientation: upright; letter-spacing:-10px;">ПРОМО</h1>
         </div>
     </div>
         <a href="/" class="specialoffer">
@@ -29,12 +45,38 @@
 
 
 <style>
+    .promo {
+        display: flex;
+        flex-direction: column;
+        color:white;
+        border: solid white;
+        border-width: 0 1px 0 1px;
+        height:90%;
+        width: 20%;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.4rem;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+    .promo > h1 {
+        margin: 0;
+        padding: 0;
+    }
+    .promo:hover {
+        background-color: #ffffff22;
+        box-shadow: 0 0 12px 5px #ffffff22;
+    }
     .centerbottom {
         display: flex;
         flex-direction: row;
         background-color: #00000044;
-        height:25%;
+        color:orange;
+        height:30%;
         width:100%;
+        font-size: 1rem;
+        justify-content: space-between;
+        align-items: center;
     }
     .central {
         display: flex;

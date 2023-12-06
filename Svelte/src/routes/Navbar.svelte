@@ -1,12 +1,9 @@
 <script lang="ts">
     import { fade, slide } from "svelte/transition";
+    import DropdownProducts from "./DropdownProducts.svelte";
     let dropdownEnabled = false;
-    function enableDropdown() {
-        dropdownEnabled = true;
-    }
-    function disableDropdown() {
-        dropdownEnabled = false;
-    }
+
+    let categoryHovered = "";
 </script>
 
 <div class="topnav">
@@ -18,13 +15,11 @@
         >
     </div>
     <div
-        style="display:flex; flex-direction:row; align-items:center; gap:0.3rem;"
-    >
+        style="display:flex; flex-direction:row; align-items:center; gap:0.3rem;">
         <img
             src="/buttonicons/envelope-at-fill.svg"
             alt="contact"
-            style="width:1.2rem; height:1.2rem; filter: brightness(0) saturate(100%) invert(99%) sepia(1%) saturate(6197%) hue-rotate(301deg) brightness(110%) contrast(101%);"
-        />
+            style="width:1.2rem; height:1.2rem; filter: brightness(0) saturate(100%) invert(99%) sepia(1%) saturate(6197%) hue-rotate(301deg) brightness(110%) contrast(101%);"/>
         <p>vasiljavaskriptin@gov.ru</p>
     </div>
 </div>
@@ -35,8 +30,7 @@
     </div>
 
     <div
-        style="display: flex; flex-direction:row; background-color:#5663F7; align-items:center; border-radius:0.6rem; width:41.5rem;"
-    >
+        style="display: flex; flex-direction:row; background-color:#5663F7; align-items:center; border-radius:0.6rem; width:41.5rem;">
         <input type="text" id="finder" placeholder="Търси Dрехи..." />
         <img src="/buttonicons/search.svg" alt="search" id="finderico" />
     </div>
@@ -58,15 +52,14 @@
 </nav>
 <div class="bottomnav">
     <button
-        on:mouseenter={() => (dropdownEnabled = true)}
+        on:mouseenter={() => {(dropdownEnabled = true); categoryHovered = "Мъжки"}}
         on:mouseleave={() => (dropdownEnabled = false)}
-        class="bottom-nav-button"
-    >
+        class="bottom-nav-button">
         МЪЖКИ
         <div class="bottomhider"></div>
     </button>
     <button
-        on:mouseenter={() => (dropdownEnabled = true)}
+        on:mouseenter={() => {(dropdownEnabled = true); categoryHovered = "Дамски"}}
         on:mouseleave={() => (dropdownEnabled = false)}
         class="bottom-nav-button"
     >
@@ -74,7 +67,7 @@
         <div class="bottomhider"></div>
     </button>
     <button
-        on:mouseenter={() => (dropdownEnabled = true)}
+        on:mouseenter={() => {(dropdownEnabled = true); categoryHovered = "Детски"}}
         on:mouseleave={() => (dropdownEnabled = false)}
         class="bottom-nav-button"
     >
@@ -82,7 +75,7 @@
         <div class="bottomhider"></div>
     </button>
     <button
-        on:mouseenter={() => (dropdownEnabled = true)}
+        on:mouseenter={() => {(dropdownEnabled = true); categoryHovered = "Аксесоари"}}
         on:mouseleave={() => (dropdownEnabled = false)}
         class="bottom-nav-button"
     >
@@ -90,30 +83,29 @@
         <div class="bottomhider"></div>
     </button>
     <button
-        on:mouseenter={() => (dropdownEnabled = true)}
+        on:mouseenter={() => {(dropdownEnabled = true); categoryHovered = "Мерч"}}
         on:mouseleave={() => (dropdownEnabled = false)}
         class="bottom-nav-button">
         MERCH
         <div class="bottomhider"></div>
     </button>
     <button
-        on:mouseenter={() => (dropdownEnabled = true)}
+        on:mouseenter={() => {(dropdownEnabled = true); categoryHovered = "Марки"}}
         on:mouseleave={() => (dropdownEnabled = false)}
         class="bottom-nav-button">
         МАРКИ
         <div class="bottomhider"></div>
     </button>
     <button
-        on:mouseenter={() => (dropdownEnabled = true)}
+        on:mouseenter={() => {(dropdownEnabled = true); categoryHovered = "Други"}}
         on:mouseleave={() => (dropdownEnabled = false)}
-        class="bottom-nav-button"
-    >
+        class="bottom-nav-button">
         ДРУГИ
         <div class="bottomhider"></div>
     </button>
     {#if dropdownEnabled}
         <div in:slide={{ duration: 800 }} out:slide={{ duration: 400 }} class="bottomnav-dropdown">
-            <!-- Dropdown content goes here -->
+            <DropdownProducts {categoryHovered}/>
         </div>
     {/if}
 </div>
@@ -124,7 +116,9 @@
         top: 100%;
         background-color: rgb(43, 45, 49);
         width:60%;
-        height: 40vh;
+        max-height: 26rem;
+        display: flex;
+        flex-direction: row;
         outline: #5663f7 solid 3px;
         border-radius: 0 0 0.3rem 0.3rem;
         z-index: 500;
