@@ -1,9 +1,51 @@
 <script lang="ts">
     import { fade, slide } from "svelte/transition";
     import DropdownProducts from "./DropdownProducts.svelte";
-    let dropdownEnabled = false;
+    import { writable } from "svelte/store";
 
     let categoryHovered = "";
+    let lastHoveredIndex = -1;
+
+    const dropdownOpen = writable(false);
+    let hovered = [false, false, false, false, false, false, false];
+    let inCurrentButton = false;
+    let hasEnteredDropdown = false;
+
+    function handleMouseEnter(index : number) {
+        inCurrentButton = true;
+        hovered[index] = true;
+        dropdownOpen.set(true);
+        lastHoveredIndex = index;
+    }
+
+    function handleMouseLeave(index : number) {
+        inCurrentButton = false;
+        hovered[index] = false;
+        setTimeout(() => {
+            if (!hasEnteredDropdown && !inCurrentButton) {
+                dropdownOpen.set(false);
+            }
+        }, 300);
+    }
+
+    function handleDropdownMouseEnter() {
+        inCurrentButton = true;
+        hasEnteredDropdown = true;
+        dropdownOpen.set(true);
+        if (lastHoveredIndex !== -1) {
+            hovered[lastHoveredIndex] = true;
+        }
+    }
+
+    function handleDropdownMouseLeave() {
+        inCurrentButton = false;
+        hasEnteredDropdown = false;
+        dropdownOpen.set(false);
+        hovered = hovered.map(() => false);
+        if (lastHoveredIndex !== -1) {
+            hovered[lastHoveredIndex] = false;
+        }
+    }
 </script>
 
 <div class="topnav">
@@ -24,9 +66,9 @@
     </div>
 </div>
 <nav>
-    <a href="/" id="logodiv">
-        <img src="/logo.webp" alt="logo" id="logo" />
-        <h1 style="font-size: 3rem; position:absolute; right:0%; color:white !important">рехи</h1>
+    <a href="/" style="display: flex; flex-direction:row; align-items:center; width:17.5rem; position:relative;">
+        <img src="/logo.webp" alt="logo" style="max-height: 7.2rem; position:absolute; left:0%;"/>
+        <img src="/rehi.PNG" alt=" " style="max-height: 4.5rem; margin-top:1.5rem; position:absolute; right:0%; z-index:1; "/>
     </a>
 
     <div
@@ -52,60 +94,62 @@
     </div>
 </nav>
 <div class="bottomnav">
-    <button
-        on:mouseenter={() => {(dropdownEnabled = true); categoryHovered = "Мъжки"}}
-        on:mouseleave={() => (dropdownEnabled = false)}
+    <button class:bottom-nav-button-hover={hovered[0]}
+        on:mouseenter={() => {handleMouseEnter(0); categoryHovered = "Мъжки"}}
+        on:mouseleave={() => handleMouseLeave(0)}
         class="bottom-nav-button">
         МЪЖКИ
         <div class="bottomhider"></div>
     </button>
-    <button
-        on:mouseenter={() => {(dropdownEnabled = true); categoryHovered = "Дамски"}}
-        on:mouseleave={() => (dropdownEnabled = false)}
+    <button class:bottom-nav-button-hover={hovered[1]}
+        on:mouseenter={() => {handleMouseEnter(1); categoryHovered = "Дамски"}}
+        on:mouseleave={() => handleMouseLeave(1)}
         class="bottom-nav-button"
     >
         ДАМСКИ
         <div class="bottomhider"></div>
     </button>
-    <button
-        on:mouseenter={() => {(dropdownEnabled = true); categoryHovered = "Детски"}}
-        on:mouseleave={() => (dropdownEnabled = false)}
+    <button class:bottom-nav-button-hover={hovered[2]}
+        on:mouseenter={() => {handleMouseEnter(2); categoryHovered = "Детски"}}
+        on:mouseleave={() => handleMouseLeave(2)}
         class="bottom-nav-button"
     >
         ДЕТСКИ
         <div class="bottomhider"></div>
     </button>
-    <button
-        on:mouseenter={() => {(dropdownEnabled = true); categoryHovered = "Аксесоари"}}
-        on:mouseleave={() => (dropdownEnabled = false)}
+    <button class:bottom-nav-button-hover={hovered[3]}
+        on:mouseenter={() => {handleMouseEnter(3); categoryHovered = "Аксесоари"}}
+        on:mouseleave={() => handleMouseLeave(3)}
         class="bottom-nav-button"
     >
         АКСЕСОАРИ
         <div class="bottomhider"></div>
     </button>
-    <button
-        on:mouseenter={() => {(dropdownEnabled = true); categoryHovered = "Мерч"}}
-        on:mouseleave={() => (dropdownEnabled = false)}
+    <button class:bottom-nav-button-hover={hovered[4]}
+        on:mouseenter={() => {handleMouseEnter(4); categoryHovered = "Мерч"}}
+        on:mouseleave={() => handleMouseLeave(4)}
         class="bottom-nav-button">
         MERCH
         <div class="bottomhider"></div>
     </button>
-    <button
-        on:mouseenter={() => {(dropdownEnabled = true); categoryHovered = "Марки"}}
-        on:mouseleave={() => (dropdownEnabled = false)}
+    <button class:bottom-nav-button-hover={hovered[5]}
+        on:mouseenter={() => {handleMouseEnter(5); categoryHovered = "Марки"}}
+        on:mouseleave={() => handleMouseLeave(5)}
         class="bottom-nav-button">
         МАРКИ
         <div class="bottomhider"></div>
     </button>
-    <button
-        on:mouseenter={() => {(dropdownEnabled = true); categoryHovered = "Други"}}
-        on:mouseleave={() => (dropdownEnabled = false)}
+    <button class:bottom-nav-button-hover={hovered[6]}
+        on:mouseenter={() => {handleMouseEnter(6); categoryHovered = "Други"}}
+        on:mouseleave={() => handleMouseLeave(6)}
         class="bottom-nav-button">
         ДРУГИ
         <div class="bottomhider"></div>
     </button>
-    {#if dropdownEnabled}
-        <div in:slide={{ duration: 800 }} out:slide={{ duration: 400 }} class="bottomnav-dropdown">
+    {#if $dropdownOpen}
+        <!-- svelte-ignore a11y-no-static-element-interactions -->
+        <div in:slide={{ duration: 800 }} out:slide={{ duration: 400 }}
+        class="bottomnav-dropdown" on:mouseenter={handleDropdownMouseEnter} on:mouseleave={handleDropdownMouseLeave}>
             <DropdownProducts {categoryHovered}/>
         </div>
     {/if}
@@ -173,13 +217,13 @@
         font-weight: bold;
         position: relative;
     }
-    .bottom-nav-button:hover {
+    .bottom-nav-button-hover {
         z-index: 888;
         background-color: rgb(43, 45, 49);
         cursor: pointer;
         outline: #5663f7 solid 3px;
     }
-    .bottom-nav-button:hover > .bottomhider {
+    .bottom-nav-button-hover > .bottomhider {
         opacity: 1;
     }
     .bottomnav {

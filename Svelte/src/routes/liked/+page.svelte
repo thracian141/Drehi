@@ -2,41 +2,40 @@
     <div style="display: flex; flex-direction:row;">
         <img style="width:5rem; margin-right: 1rem;" src="/buttonicons/heart-box.svg" alt=" "/>
         <h1 style="font-size: 4rem;">ХАРЕСАНИ АРТИКУЛИ</h1>
-        <img style="width:5rem; margin-left: 1rem;" src="/buttonicons/archive-fill.svg" alt=" "/>
     </div>
     <div style="width:100%; height:2px; background-color:rgb(66, 69, 73); margin-top:1rem;"></div>
     <ul class="list">
         <li class="liked-item">
             <p>3x</p>
-            <img class="itemimg" src='src/lib/img/obuvki.png' alt=" "/>
+            <img class="itemimg" src='/img/obuvki.PNG' alt=" "/>
             <h1>Калцони</h1>
             <span style="color:#ff8888">Няма налична промоция!</span>
             <img src='/buttonicons/trash-fill.svg' alt=" " class="trash"/>
         </li>
         <li class="liked-item">
             <p>1x</p>
-            <img class="itemimg" src='src/lib/img/shirt.webp' alt=" "/>
+            <img class="itemimg" src='/img/shirt.webp' alt=" "/>
             <h1>Използвана риза</h1>
             <span style="color:#ff8888">Няма налична промоция!</span>
             <img src='/buttonicons/trash-fill.svg' alt=" " class="trash"/>
         </li>
         <li class="liked-item">
             <p>7x</p>
-            <img class="itemimg" src='src/lib/img/clock.jpg' alt=" "/>
+            <img class="itemimg" src='/img/clock.jpg' alt=" "/>
             <h1>motherfuckin' clock</h1>
             <span style="color:#ff8888">Няма налична промоция!</span>
             <img src='/buttonicons/trash-fill.svg' alt=" " class="trash"/>
         </li>
         <li class="liked-item">
             <p>1x</p>
-            <img class="itemimg" src='src/lib/img/qke.jpg' alt=" "/>
+            <img class="itemimg" src='/img/qke.jpg' alt=" "/>
             <h1>qke :)</h1>
             <span style="color:#88ff88">Има налична промоция!</span>
             <img src='/buttonicons/trash-fill.svg' alt=" " class="trash"/>
         </li>
         <li class="liked-item">
             <p>1x</p>
-            <img class="itemimg" src='src/lib/img/arab.jpg' alt=" "/>
+            <img class="itemimg" src='/img/arab.jpg' alt=" "/>
             <h1>UAE Polo "Halal Arab"</h1>
             <span style="color:#88ff88">Има налична промоция!</span>
             <img src='/buttonicons/trash-fill.svg' alt=" " class="trash"/>

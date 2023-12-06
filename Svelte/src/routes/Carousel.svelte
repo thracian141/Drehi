@@ -2,56 +2,56 @@
     <div class="entire-content">
       <div class="content-carrousel">
         <figure class="shadow">
-            <img src="src/lib/img/shoes.png" alt=" "/>
+            <img src="/img/shoes.png" alt=" "/>
             <div class="figure-label-bg">
                 <span>Thomas Jefferson</span>
                 <span>Thomas Jefferson 1866's</span>
             </div>
         </figure>
         <figure class="shadow">
-            <img src="src/lib/img/specialki.jpg" alt=" "/>
+            <img src="/img/specialki.jpg" alt=" "/>
             <div class="figure-label-bg">
                 <span>Кърджалийки</span>
                 <span>Кърджали "Специалки"</span>
             </div>
         </figure>
         <figure class="shadow">
-            <img src="src/lib/img/qke.jpg" alt=" "/>
+            <img src="/img/qke.jpg" alt=" "/>
             <div class="figure-label-bg">
                 <span>Vasil Petrov</span>
                 <span>Vasil "Versace"</span>
             </div>
         </figure>
         <figure class="shadow">
-            <img src="src/lib/img/hookah.jpg" alt=" "/>
+            <img src="/img/hookah.jpg" alt=" "/>
             <div class="figure-label-bg">
                 <span>Halal Albania</span>
                 <span>Качествено албанско наргиле</span>
             </div>
         </figure>
         <figure class="shadow">
-            <img src="src/lib/img/clock.jpg" alt=" "/>
+            <img src="/img/clock.jpg" alt=" "/>
             <div class="figure-label-bg">
                 <span>Fucking Clock</span>
                 <span>Motherfuckin' CLOCK!!</span>
             </div>
         </figure>
         <figure class="shadow">
-            <img src="src/lib/img/arab.jpg" alt=" "/>
+            <img src="/img/arab.jpg" alt=" "/>
             <div class="figure-label-bg">
                 <span>UAE Polo</span>
                 <span>Halal</span>
             </div>
         </figure>
         <figure class="shadow">
-            <img src="src/lib/img/korset.jpg" alt=" "/>
+            <img src="/img/korset.jpg" alt=" "/>
             <div class="figure-label-bg">
                 <span>Nike</span>
                 <span>Мъжки Корсет Nike</span>
             </div>
         </figure>
         <figure class="shadow">
-            <img src="src/lib/img/dyrva.jpg" alt=" "/>
+            <img src="/img/dyrva.jpg" alt=" "/>
             <div class="figure-label-bg">
                 <span>Дърва</span>
                 <span>за огрев</span>

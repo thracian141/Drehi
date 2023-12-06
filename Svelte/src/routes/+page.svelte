@@ -123,7 +123,7 @@
     height:100%;
     }
     .specialoffer {
-    background-image: url("src/lib/img/offer1.jpg");
+    background-image: url("/img/offer1.jpg");
     height: 100%;
     width: 15%;
     background-repeat: no-repeat;
@@ -140,7 +140,7 @@
     overflow: hidden;
     }
     .specialoffer:last-child {
-    background-image: url("src/lib/img/offer2.jpg");
+    background-image: url("/img/offer2.jpg");
     }
     .specialoffer:hover {
     box-shadow: inset 0 0 0 2000px rgba(0,0,0,0);
