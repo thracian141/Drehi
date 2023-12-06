@@ -24,10 +24,10 @@
     </div>
 </div>
 <nav>
-    <div id="logodiv">
+    <a href="/" id="logodiv">
         <img src="/logo.webp" alt="logo" id="logo" />
-        <h1 style="font-size: 3rem; position:absolute; right:0%;">рехи</h1>
-    </div>
+        <h1 style="font-size: 3rem; position:absolute; right:0%; color:white !important">рехи</h1>
+    </a>
 
     <div
         style="display: flex; flex-direction:row; background-color:#5663F7; align-items:center; border-radius:0.6rem; width:41.5rem;">
@@ -36,11 +36,12 @@
     </div>
 
     <div style="display:flex;flex-direction:row; gap:1.2rem;">
-        <a href="/" class="navbutton">
+        <a href="/liked" class="navbutton">
             <img src="/buttonicons/heart-half.svg" alt="liked items" />
             <p style="margin:0; padding:0;">ХАРЕСАНИ</p>
+            <div class="circle">2</div>
         </a>
-        <a href="/" class="navbutton">
+        <a href="/cart" class="navbutton">
             <img src="/buttonicons/cart-fill.svg" alt="liked items" />
             <p style="margin:0; padding:0;">КОЛИЧКА</p>
         </a>
@@ -111,6 +112,28 @@
 </div>
 
 <style>
+    #logodiv {
+        transition: filter 0.1s ease-in-out;
+    }
+    #logodiv:hover {
+        cursor: pointer;
+        filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.8));
+    }
+    .circle {
+        background-color: #ff8888 !important;
+        border-radius: 100%;
+        color: white !important;
+        font-size: 1rem;
+        width: 1.4rem;
+        height: 1.4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top:-15%; right:20%;
+        font-weight: bolder;
+        filter:none !important;
+    }
     .bottomnav-dropdown {
         position: absolute;
         top: 100%;
@@ -210,16 +233,19 @@
         align-items: center;
         gap: 0.3rem;
         text-decoration: none;
+        position: relative;
         transition: filter 0.1s ease-in-out;
-        filter: brightness(0) saturate(100%) invert(78%) sepia(12%)
-            saturate(362%) hue-rotate(160deg) brightness(85%) contrast(87%);
     }
     .navbutton > p {
         font-size: 1.2rem;
+        filter: brightness(0) saturate(100%) invert(78%) sepia(12%)
+            saturate(362%) hue-rotate(160deg) brightness(85%) contrast(87%);
     }
-    .navbutton > img {
+    .navbutton > img:first-child {
         height: 1.7rem;
         width: auto;
+        filter: brightness(0) saturate(100%) invert(78%) sepia(12%)
+            saturate(362%) hue-rotate(160deg) brightness(85%) contrast(87%);
     }
     .navbutton:hover {
         filter: brightness(0) saturate(100%) invert(100%) sepia(100%)
