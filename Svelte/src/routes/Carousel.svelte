@@ -110,7 +110,7 @@
         transform-style: preserve-3d;
     }
     .content-carrousel:hover {
-        animation-play-state: paused;
+        animation-play-state:paused;
         cursor: pointer;
     }
     .content-carrousel figure {
@@ -138,6 +138,29 @@
     transform: rotateY(315deg) translateZ(26rem); 
     } .content-carrousel figure:nth-child(9) {
     transform: rotateY(360deg) translateZ(26rem); 
+    } 
+
+    .content-carrousel  figure {
+        transition: transform 0.2s ease-in-out;
+    }
+    .content-carrousel figure:nth-child(1):hover {
+    transform: rotateY(0deg) translateZ(34rem); 
+    } .content-carrousel figure:nth-child(2):hover {
+    transform: rotateY(45deg) translateZ(34rem); 
+    } .content-carrousel figure:nth-child(3):hover {
+    transform: rotateY(90deg) translateZ(34rem); 
+    } .content-carrousel figure:nth-child(4):hover {
+    transform: rotateY(135deg) translateZ(34rem); 
+    } .content-carrousel figure:nth-child(5):hover {
+    transform: rotateY(180deg) translateZ(34rem); 
+    } .content-carrousel figure:nth-child(6):hover {
+    transform: rotateY(225deg) translateZ(34rem); 
+    } .content-carrousel figure:nth-child(7):hover {
+    transform: rotateY(270deg) translateZ(34rem); 
+    } .content-carrousel figure:nth-child(8):hover {
+    transform: rotateY(315deg) translateZ(34rem); 
+    } .content-carrousel figure:nth-child(9):hover {
+    transform: rotateY(360deg) translateZ(34rem); 
     } 
     .content-carrousel img {
         image-rendering: auto;

@@ -15,7 +15,7 @@
             <Carousel />
         </div>
         <div class="centerbottom">
-            a
+            <h1 style="writing-mode: vertical-rl; text-orientation: upright; letter-spacing:-10px;">ПРОМО!</h1>
         </div>
     </div>
         <a href="/" class="specialoffer">
@@ -32,7 +32,7 @@
     .centerbottom {
         display: flex;
         flex-direction: row;
-        background-color: red;
+        background-color: #00000044;
         height:25%;
         width:100%;
     }
